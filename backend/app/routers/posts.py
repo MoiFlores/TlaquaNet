@@ -73,6 +73,7 @@ def create_post(post: PostCreate, db: Session = Depends(get_db)):
             "content_length": len(post.content),
             "preview": post.content[:100],
             "has_image": bool(post.image_url),
+            "image_url": post.image_url,
         }),
     )
     db.add(event)
